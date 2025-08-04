@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart - Book Store</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 2rem;
+      background: #f4f4f4;
+    }
+    .cart-container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      background-color: #ff5252;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .empty {
+      text-align: center;
+      color: #999;
+    }
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="cart-container">
+    <h1>Your Cart</h1>
+    <ul id="cartList"></ul>
+    <div class="empty" id="emptyMsg">Cart is empty.</div>
+  </div>
+
+  <div class="footer">© 2025 Book Store. Designed by Dhanush Bellala</div>
+
+  <script>
+    const cartList = document.getElementById("cartList");
+    const emptyMsg = document.getElementById("emptyMsg");
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function displayCart() {
+      cartList.innerHTML = "";
+      if (cart.length === 0) {
+        emptyMsg.style.display = "block";
+      } else {
+        emptyMsg.style.display = "none";
+        cart.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <span>${item}</span>
+            <button onclick="removeItem(${index})">Remove</button>
+          `;
+          cartList.appendChild(li);
+        });
+      }
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      displayCart();
+    }
+
+    displayCart();
+  </script>
+</body>
+</html>

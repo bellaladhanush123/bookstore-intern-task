@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Book Store</title>
+  <link rel="stylesheet" href="public/styles.min.css">
+  <style>
+    .container {
+      max-width: 1200px;
+      margin: 100px auto 40px;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center/cover no-repeat;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .book-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #2c3e50;
+    }
+
+    .book-card p {
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #5a6de0 0%, #6d3da9 100%);
+    }
+
+    .footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+    }
+
+    .navbar {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a,
+    .nav-links button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links button:hover {
+      opacity: 0.8;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">Book Store</div>
+    <div class="nav-links">
+      <a href="index.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="cart.html">Cart</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Book Store</h1>
+      <p>Discover your next favorite read from our extensive collection</p>
+      <a href="index.html" class="btn">Browse Books</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="section-title text-center">Explore Categories</h1>
+
+    <div class="book-grid">
+      <div class="book-card">
+        <h3> Fiction Books</h3>
+        <p>Explore captivating stories and imaginative worlds</p>
+        <a href="index.html" class="btn">Browse Fiction</a>
+      </div>
+
+      <div class="book-card">
+        <h3> Non-Fiction Books</h3>
+        <p>Learn from real-world knowledge and insights</p>
+        <a href="index.html" class="btn">Browse Non-Fiction</a>
+      </div>
+
+      <div class="book-card">
+        <h3>Search Books</h3>
+        <p>Find exactly what you're looking for with our advanced search</p>
+        <a href="index.html" class="btn">Search Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Book Store. All rights reserved.</p>
+  </div>
+</body>
+
+</html>
